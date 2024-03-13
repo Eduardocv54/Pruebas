@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+import so from './so.png';
 import './App.css';
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={fam} className="App-logo" alt="fam" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={so} className="App-logo" alt="fam" />
+      
+        <Form.Label >Nombre : </Form.Label>
+
+        <Form.Control type = "Text"></Form.Control>
+
+        <Button >Guardar</Button>
+       
       </header>
     </div>
   );
