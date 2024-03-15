@@ -1,22 +1,19 @@
 import so from './so.png';
 import './App.css';
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import Formulario from './Componentes/Formulario.js';
+import { useState } from 'react';
 
 
 function App() {
+  const [personaNombre, setPersona] = useState("Eduardo");
   return (
     <div className="App">
       <header className="App-header">
+
         <img src={so} className="App-logo" alt="fam" />
-      
-        <Form.Label >Nombre : </Form.Label>
-
-        <Form.Control type = "Text"></Form.Control>
-
-        <Button >Guardar</Button>
-       
+        <Formulario personaNombre = {personaNombre}/>
       </header>
+             
     </div>
   );
 }
