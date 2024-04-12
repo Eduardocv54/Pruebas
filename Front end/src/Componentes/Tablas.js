@@ -1,4 +1,6 @@
 import MUIDataTable from "mui-datatables"
+import {Col, Button, } from 'react-bootstrap'
+import { useState } from 'react';
 
 const usuarios = [
     {
@@ -112,18 +114,37 @@ const columns = [
     "NombredeUsuario"
 ];
 
+
+
+
 export default function Tablas () {
+  const  Click= ()=> {
+  }
+  const [formularioAbierto, setFormularioAbierto] = useState(false);  //Variable constante para abrir y cerrar formulario con false/true
+  const [tablaabierta, setTablaAbierta] = useState(true);
+
+  const abrirFormulario = () => {
+    setFormularioAbierto(true);
+    setTablaAbierta(false);
+  };
+
+  const handleCloseFormulario = () => {
+    setFormularioAbierto(false);
+    setTablaAbierta(true)
+  };
     return (
-        <MUIDataTable
+
+      <>
+      <Button className="NewUser" onClick={abrirFormulario}>Nuevo Usuario</Button> 
+      <MUIDataTable
+      
         data = {usuarios}
         columns = {columns}
         />
+      </>
+        
     )
 }
 
 
 
-///Asi no?
-// pq daba erro importando los usuarios desde el json?
-//Porque no estaban correctamente en el arreglo
-//Creo que se tenia que importar algo asi mira
