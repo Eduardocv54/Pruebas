@@ -11,65 +11,65 @@ function Formulario ({setform}){
             <CardBody>
               <Row>
                 <Col>
-                  <Form.Label htmlFor='nombre'>Nombre : </Form.Label>
+                  <Form.Label>Nombre : </Form.Label>
                 </Col>
                 <Col>
-                  <Form.Control > </Form.Control>
-                </Col>
-              </Row>
-  <br></br>
-              <Row>
-                <Col>
-                  <Form.Label htmlFor='Primer Apellido'>Primer Apellido : </Form.Label>
-                </Col>
-                <Col>
-                  <Form.Control className='form-control'> </Form.Control>
+                  <Form.Control/>
                 </Col>
               </Row>
   <br></br>
               <Row>
                 <Col>
-                  <Form.Label htmlFor='Segundo Apellido'>Segundo Apellido : </Form.Label>
+                  <Form.Label>Primer Apellido : </Form.Label>
                 </Col>
                 <Col>
-                  <Form.Control className='form-control'> </Form.Control>
-                </Col>
-              </Row>
-  <br></br>
-              <Row>
-                <Col>
-                  <Form.Label htmlFor='Nombre de usuario'>Nombre de usuario : </Form.Label>
-                </Col>
-                <Col>
-                  <Form.Control className='form-control'> </Form.Control>
+                  <Form.Control/>
                 </Col>
               </Row>
   <br></br>
               <Row>
                 <Col>
-                  <Form.Label htmlFor='Contraseña'>Contraseña : </Form.Label>
+                  <Form.Label>Segundo Apellido : </Form.Label>
                 </Col>
                 <Col>
-                  <Form.Control className='form-control'>  </Form.Control>
+                  <Form.Control/>
                 </Col>
               </Row>
   <br></br>
               <Row>
                 <Col>
-                <Form.Label htmlFor='Confirmar Contraseña'>Confirmar Contraseña : </Form.Label>
+                  <Form.Label>Nombre de usuario : </Form.Label>
                 </Col>
                 <Col>
-                  <Form.Control className='form-control'> </Form.Control>
+                  <Form.Control/>
+                </Col>
+              </Row>
+  <br></br>
+              <Row>
+                <Col>
+                  <Form.Label>Contraseña : </Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control/>
+                </Col>
+              </Row>
+  <br></br>
+              <Row>
+                <Col>
+                  <Form.Label>Confirmar Contraseña : </Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control/>
                 </Col>
               </Row>
   <br></br>
             </CardBody>
 
             <CardFooter>
-                <Col>
+              <Col>
                 <Button> Guardar</Button> 
                 <Button onClick = {setform}>Cancelar</Button>
-            </Col></CardFooter>
+              </Col></CardFooter>
       
         </Card>
       </Row>

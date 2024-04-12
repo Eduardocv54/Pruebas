@@ -119,24 +119,11 @@ const columns = [
 
 
 
-export default function Tablas () {
-  const  Click= ()=> {
-  }
-  const [formularioAbierto, setFormularioAbierto] = useState(false);  //Variable constante para abrir y cerrar formulario con false/true
-  const [tablaabierta, setTablaAbierta] = useState(true);
+export default function Tablas ({settable}) {
 
-  const abrirFormulario = () => {
-    setFormularioAbierto(true);
-    setTablaAbierta(false);
-  };
-
-  const handleCloseFormulario = () => {
-    setFormularioAbierto(false);
-    setTablaAbierta(true)
-  };
     return (
       <>
-      <Button>Nuevo Usuario</Button>
+      <Button onClick={settable}>Nuevo Usuario</Button>
         <MUIDataTable
 
         data = {usuarios}

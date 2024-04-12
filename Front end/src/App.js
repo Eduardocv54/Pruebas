@@ -1,12 +1,10 @@
 import so from './so.png';
 import './App.css';
 import { useState } from 'react';
-import Formulario from './Componentes/Formulario'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 import { Button, Col, Row } from 'react-bootstrap';
 
-
+import Formulario from './Componentes/Formulario'
 import Tablas from './Componentes/Tablas';
 import UserIndex from './Componentes/Index';
 
@@ -30,8 +28,6 @@ function App() {
           <UserIndex></UserIndex>
         </Col>
       </Row>
-     
-      
     </div>
     
   );

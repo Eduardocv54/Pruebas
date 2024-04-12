@@ -14,7 +14,7 @@ const [showform, setshowform] = useState (true);
     return (
         showform ?
             (<Formulario setform={chvalue}></Formulario>) 
-            : (<Tablas></Tablas>)
+            : (<Tablas settable={chvalue} ></Tablas>)
     );
   }
 
