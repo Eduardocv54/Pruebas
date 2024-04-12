@@ -9,7 +9,7 @@ function UserIndex () {
 const [showform, setshowform] = useState (true);
 
  function chvalue (){
-    setform (!showform);
+    setshowform (!showform);
  }
     return (
         showform ?
