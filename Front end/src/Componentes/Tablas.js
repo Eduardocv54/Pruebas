@@ -1,4 +1,5 @@
 import MUIDataTable from "mui-datatables"
+import { Button } from "react-bootstrap";
 
 const usuarios = [
     {
@@ -114,16 +115,15 @@ const columns = [
 
 export default function Tablas () {
     return (
+      <>
+      <Button>Nuevo Usuario</Button>
         <MUIDataTable
         data = {usuarios}
         columns = {columns}
         />
+      </>
+      
     )
 }
 
 
-
-///Asi no?
-// pq daba erro importando los usuarios desde el json?
-//Porque no estaban correctamente en el arreglo
-//Creo que se tenia que importar algo asi mira

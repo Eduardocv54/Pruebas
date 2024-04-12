@@ -1,10 +1,8 @@
 import {Col, Button, Row, Form, Card, CardHeader, CardBody, CardFooter} from 'react-bootstrap'
 
-function Formulario (personaNombre){
-    function Click(){
-         console.log (personaNombre);
-    }
-   
+function Formulario ({setform}){
+    
+
     return (
        <Row sm={7}>
         <Card >
@@ -20,7 +18,7 @@ function Formulario (personaNombre){
               </input>
             </Col>
             </Row>
-
+<br></br>
             <Row>
             <Col>
             <Form.Label htmlFor='Primer Apellido'>Primer Apellido : </Form.Label>
@@ -30,7 +28,7 @@ function Formulario (personaNombre){
               </input>
             </Col>
             </Row>
-
+<br></br>
             <Row>
             <Col>
             <Form.Label htmlFor='Segundo Apellido'>Segundo Apellido : </Form.Label>
@@ -40,7 +38,7 @@ function Formulario (personaNombre){
               </input>
             </Col>
             </Row>
-
+<br></br>
             <Row>
             <Col>
             <Form.Label htmlFor='Nombre de usuario'>Nombre de usuario : </Form.Label>
@@ -50,7 +48,7 @@ function Formulario (personaNombre){
               </input>
             </Col>
             </Row>
-
+<br></br>
             <Row>
             <Col>
             <Form.Label htmlFor='Contraseña'>Contraseña : </Form.Label>
@@ -60,7 +58,7 @@ function Formulario (personaNombre){
               </input>
             </Col>
             </Row>
-
+<br></br>
             <Row>
             <Col>
             <Form.Label htmlFor='Confirmar Contraseña'>Confirmar Contraseña : </Form.Label>
@@ -75,7 +73,8 @@ function Formulario (personaNombre){
 
             <CardFooter>
                 <Col>
-                <Button onClick = {Click()}> Guardar</Button> 
+                <Button> Guardar</Button> 
+                <Button onClick = {setform}>Cancelar</Button>
             </Col></CardFooter>
       
         </Card>
