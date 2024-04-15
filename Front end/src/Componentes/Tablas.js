@@ -1,7 +1,7 @@
 import MUIDataTable from "mui-datatables"
 
-import {Col, Button, } from 'react-bootstrap'
-import { useState } from 'react';
+import {Col, Button, Row } from 'react-bootstrap'
+import { useState} from 'react';
 
 
 const usuarios = [
@@ -123,11 +123,15 @@ export default function Tablas ({settable}) {
 
     return (
       <>
-      <Button onClick={settable}>Nuevo Usuario</Button>
+      <Row className="justify-content-left">
+         <Button onClick={settable}>Nuevo Usuario</Button>
+      </Row>
+     
         <MUIDataTable
 
         data = {usuarios}
         columns = {columns}
+
         />
       </>
 

@@ -13,8 +13,8 @@ const [showform, setshowform] = useState (true);
  }
     return (
         showform ?
-            (<Formulario setform={chvalue}></Formulario>) 
-            : (<Tablas settable={chvalue} ></Tablas>)
+            (<Tablas settable={chvalue} ></Tablas>) 
+            : (<Formulario setform={chvalue}></Formulario>)
     );
   }
 
