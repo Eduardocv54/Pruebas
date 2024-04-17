@@ -6,17 +6,19 @@ import Tablas from './Tablas';
 
 function UserIndex () {
 
-const [showform, setshowform] = useState (true);
+   const [showform, setshowform] = useState (true);
 
- function chvalue (){
-    setshowform (!showform);
- }
-    return (
-        showform ?
-            (<Tablas settable={chvalue} ></Tablas>) 
-            : (<Formulario setform={chvalue}></Formulario>)
-    );
-  }
+   function chvalue (){
+      setshowform (!showform);
+   }
+   return (
+      showform ?
+         (<Tablas settable={chvalue} ></Tablas>) 
+         : (<Formulario setform={chvalue}></Formulario>)
+   );
+}
+
+
 
 
 export default UserIndex;
