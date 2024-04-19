@@ -2,7 +2,18 @@ import React, { Component, useState } from 'react';
 import Formulario from './Formulario';
 import Tablas from './Tablas';
 
+import {Provider} from 'react-redux'
+import store from '../Redux/Store';
 
+
+ReactDOM.render(
+   <React.StrictMode>
+     <Provider>
+       <App />
+     </Provider>
+   </React.StrictMode>,
+   document.getElementById('root')
+ );
 
 function UserIndex () {
 
