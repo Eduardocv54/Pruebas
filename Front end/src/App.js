@@ -7,13 +7,11 @@ import { Button, Col, Row } from 'react-bootstrap';
 import Formulario from './Componentes/Formulario'
 import Tablas from './Componentes/Tablas';
 import UserIndex from './Componentes/Index';
+import axios from 'axios'
 
 
 function App() {
   return (
-    
-  
-
     <div className="App" >
       <header className="App-header">
         <img src={so} className="App-logo" alt="fam" />
