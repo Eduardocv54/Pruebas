@@ -1,13 +1,13 @@
 
 
 import { createSlice } from "@reduxjs/toolkit";
-import {getUsers} from '../Actions/Action'
+import { getUsers } from '../Actions/Action'
 
 const initialState = {
     users: [],
     loading: false,
-    error: null
-}
+    error: null,
+};
 
  const UserSlice = createSlice ({
     name: "getUsers",
@@ -20,18 +20,16 @@ const initialState = {
             state.loading = true;
             state.error = null;
         })
-        .addCase(getUsers.pending, (state, action) => {
+        .addCase(getUsers.fulfilled, (state, action) => {
             state.users = action.payload;
             state.loading = false;
             state.error = null;
         })
-        .addCase(getUsers.pending, (state, action) => {
+        .addCase(getUsers.rejected, (state, action) => {
             state.users = [];
             state.loading = false;
             state.error = action.error.message;
         })
     }
 })
- export const listUserReducer = UserSlice.reducer;
-
- 
+ export const getUserReducer = UserSlice.reducer;

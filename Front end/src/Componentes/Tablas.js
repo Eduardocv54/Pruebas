@@ -3,146 +3,47 @@ import MUIDataTable from "mui-datatables"
 import {Col, Button, Row } from 'react-bootstrap'
 import { useState} from 'react';
 import axios from 'axios'
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from "../Redux/Actions/Action";
 
-const usuarios = [
-  {
-    "id": 1,
-    "Nombre": "Juan",
-    "PrimerApellido": "González",
-    "SegundoApellido": "Pérez",
-    "Correo": "juan.gonzalez@example.com",
-    "Telefono": "123456789",
-    "NombredeUsuario": "juang"
-  },
-  {
-    "id": 2,
-    "Nombre": "María",
-    "PrimerApellido": "López",
-    "SegundoApellido": "García",
-    "Correo": "maria.lopez@example.com",
-    "Telefono": "987654321",
-    "NombredeUsuario": "marial"
-  },
-  {
-    "id": 3,
-    "Nombre": "Carlos",
-    "PrimerApellido": "Martínez",
-    "SegundoApellido": "Rodríguez",
-    "Correo": "carlos.martinez@example.com",
-    "Telefono": "456789123",
-    "NombredeUsuario": "carlosm"
-  },
-  {
-    "id": 4,
-    "Nombre": "Ana",
-    "PrimerApellido": "Fernández",
-    "SegundoApellido": "López",
-    "Correo": "ana.fernandez@example.com",
-    "Telefono": "741852963",
-    "NombredeUsuario": "anaf"
-  },
-  {
-    "id": 5,
-    "Nombre": "Pedro",
-    "PrimerApellido": "Sánchez",
-    "SegundoApellido": "Martínez",
-    "Correo": "pedro.sanchez@example.com",
-    "Telefono": "369258147",
-    "NombredeUsuario": "pedros"
-  },
-  {
-    "id": 6,
-    "Nombre": "Laura",
-    "PrimerApellido": "Díaz",
-    "SegundoApellido": "Fernández",
-    "Correo": "laura.diaz@example.com",
-    "Telefono": "852147963",
-    "NombredeUsuario": "laurad"
-  },
-  {
-    "id": 7,
-    "Nombre": "Javier",
-    "PrimerApellido": "Pérez",
-    "SegundoApellido": "Sánchez",
-    "Correo": "javier.perez@example.com",
-    "Telefono": "951753852",
-    "NombredeUsuario": "javierp"
-  },
-  {
-    "id": 8,
-    "Nombre": "Sara",
-    "PrimerApellido": "García",
-    "SegundoApellido": "Martínez",
-    "Correo": "sara.garcia@example.com",
-    "Telefono": "753951852",
-    "NombredeUsuario": "sarag"
-  },
-  {
-    "id": 9,
-    "Nombre": "Miguel",
-    "PrimerApellido": "Hernández",
-    "SegundoApellido": "Sánchez",
-    "Correo": "miguel.hernandez@example.com",
-    "Telefono": "159753852",
-    "NombredeUsuario": "miguelh"
-  },
-  {
-    "id": 10,
-    "Nombre": "Lucía",
-    "PrimerApellido": "Martín",
-    "SegundoApellido": "Pérez",
-    "Correo": "lucia.martin@example.com",
-    "Telefono": "852963741",
-    "NombredeUsuario": "luciam"
-  },
-  {
-    "id": 11,
-    "Nombre": "Daniel",
-    "PrimerApellido": "Jiménez",
-    "SegundoApellido": "Gómez",
-    "Correo": "daniel.jimenez@example.com",
-    "Telefono": "369147258",
-    "NombredeUsuario": "danield"
-  }
-];
+
 const columns = [
-  "id", 
-  "Nombre", 
-  "PrimerApellido", 
-  "SegundoApellido", 
-  "Correo", 
-  "Telefono", 
-  "NombredeUsuario",
+  "idUsuario", 
+  "nombre", 
+  "primerApellido", 
+  "segundoApellido", 
+  "fechaNacimiento", 
 ];
 
 export default function Tablas ({settable}) {
+///
+    const dispatch = useDispatch();
+    const {usuarios} = useSelector((state) => state.getUsers);
 
+    useEffect(()=> {
+      dispatch(getUsers());
+    },[dispatch])
   
-  function martes (){
-  /*
-    const getUser = (settable)
-    axios.get(usuarios)
-    .then(response => {
-      return response.data
-    });
-    */
-  }
-
-
-
   return (
     <>
-      <Row className="justify-content-left">
-        <Button onClick={settable}>Nuevo Usuario</Button>
-      </Row>
-     
+      <div className="display: flex; justify-content: space-between; align-items: right;">
+        <Button onClick={settable} >Nuevo Usuario</Button>
+      </div>
+  <br></br>
+      <div>
+        <Button onClick={settable}>Editar</Button>
+      </div>
+     {usuarios && usuarios.data ? (
       <MUIDataTable
-      /*data = {usuarios}*/
+      
+      data = {usuarios}
       columns = {columns}
       />
+     ):(null)}
+     
       
     </>
-
   )
 }
 
