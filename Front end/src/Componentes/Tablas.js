@@ -1,8 +1,5 @@
 import MUIDataTable from "mui-datatables"
-
-import {Col, Button, Row } from 'react-bootstrap'
-import { useState} from 'react';
-import axios from 'axios'
+import {Button} from 'react-bootstrap'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../Redux/Actions/Action";
@@ -17,9 +14,9 @@ const columns = [
 ];
 
 export default function Tablas ({settable}) {
-///
+
     const dispatch = useDispatch();
-    const {usuarios} = useSelector((state) => state.getUsers);
+    const {users} = useSelector((state)=>state.getUsers);
 
     useEffect(()=> {
       dispatch(getUsers());
@@ -27,22 +24,13 @@ export default function Tablas ({settable}) {
   
   return (
     <>
-      <div className="display: flex; justify-content: space-between; align-items: right;">
-        <Button onClick={settable} >Nuevo Usuario</Button>
-      </div>
-  <br></br>
-      <div>
-        <Button onClick={settable}>Editar</Button>
-      </div>
-     {usuarios && usuarios.data ? (
+      <Button onClick={settable}>Nuevo Usuario</Button>
+      <Button onClick={settable}>Editar</Button>
+    
       <MUIDataTable
-      
-      data = {usuarios}
-      columns = {columns}
+        data = {users}
+        columns = {columns}
       />
-     ):(null)}
-     
-      
     </>
   )
 }

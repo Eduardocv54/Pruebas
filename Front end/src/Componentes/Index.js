@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, {useState } from 'react';
 import Formulario from './Formulario';
 import Tablas from './Tablas';
 
@@ -12,10 +12,9 @@ function UserIndex () {
    }
    return (
       showform ?
-         (<Tablas settable={chvalue} ></Tablas>) 
-         : (<Formulario setform={chvalue}></Formulario>)
+         (<Tablas settable={chvalue}></Tablas>) 
+         :(<Formulario setform={chvalue}></Formulario>)
    );
 }
-
 
 export default UserIndex;
